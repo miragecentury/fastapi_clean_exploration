@@ -8,6 +8,20 @@ services:
     networks:
       - devcontainer
 
+  rabbitmq:
+    image: "rabbitmq:4.0-management"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - devcontainer
+
+  mongodb:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+    networks:
+      - devcontainer
 networks:
   devcontainer:
     driver: bridge
